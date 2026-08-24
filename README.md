@@ -100,7 +100,7 @@ A Encloser Case for Ruby home automation. The top part and bottom part are Frict
 <div align="center">
 <table>
 <tr>
-<td valign="bottom"><img width=350px alt="image" src="https://github.com/user-attachments/assets/42d68add-5cff-4576-99cb-57eee04979b4" />
+<td valign="bottom"><img width=350px alt="image" src="https://github.com/user-attachments/assets/5c545863-3e82-4745-886e-65c562d16691" />
 </td>
 <td valign="bottom"><img width=350px alt="Image" src="https://github.com/user-attachments/assets/bcd88ff0-dfd4-484a-b8b7-ced2a131613b" />
 </table>
