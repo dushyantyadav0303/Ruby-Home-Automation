@@ -141,6 +141,9 @@ Source: `BOM/BOM.csv`
 |7       |2N3904(SOT-23)           |Q1,Q2,Q3,Q4,Q7,Q8,Q9              |SOT-23-3_L2.9-W1.3-P1.90-LS2.4-TR         |$ 0.47      |https://www.lcsc.com/product-detail/C50176433.html                                                                       |
 |7       |IR333-A                  |U2,U3,U4,U5,U6,U7,U8              |LED-TH_BD6.2-P2.54-FD                     |$ 0.68      |https://www.lcsc.com/product-detail/C50176433.html                                                                      |
 |7       |SRD-05VDC-SL-C           |RLY1,RLY2,RLY3,RLY4,RLY5,RLY6,RLY7|RELAY-TH_SRD-XXVDC-XL-C                   |$ 0.44      |https://www.lcsc.com/product-detail/C35449.html                                                                          |
+|1       |PCB                      |                                  |                                          |$14         |https://jlcpcb.com                                                                                                       |
+|Total   |                         |                                  |                                          |$34.25      |                                                                                                                         |
+
 
 
 > [!NOTE]
