@@ -1,0 +1,356 @@
+@import url('https://fonts.googleapis.com/css2?family=Iceberg&display=swap');
+
+
+
+body {
+    background-color: black;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* overflow-y: auto;
+    overflow-x: hidden;  */
+}
+
+.iceberg-regular {
+  font-family: "Iceberg", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.video-animation{
+    width: 30%;
+    height: 30%;   
+    z-index: 99;
+}
+
+
+video {
+    width: 100%;
+    height: 100%;
+}
+
+#Ruby {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    z-index: 99;
+}
+
+@keyframes movetotopleft {
+ from {   
+   width: 30%;
+   height: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+
+ to {
+   width: 10%;
+   height: 10%;
+   position: absolute;
+   top: 5%;
+   left: 5%;
+   transform: translate(0, 0);
+ }
+}
+
+
+ @keyframes backtocentre {
+ from {   
+    width: 10%;
+   height: 10%;
+   position: absolute;
+   top: 5%;
+   left: 5%;
+   transform: translate(0, 0);
+ }
+
+ to {
+  width: 30%;
+   height: 30%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+ }
+}
+
+
+
+.video-animation.login-animation {
+animation: movetotopleft 1s ease-in-out forwards;
+}
+
+.video-animation.register-animation {
+animation: backtocentre 1s ease-in-out forwards;
+
+}
+
+.video-animation.register-animation-end {
+animation: movetocentre 1s ease-in-out forwards;
+
+}
+
+
+
+.opps-text{
+    position: absolute;
+    top: 10%;
+    left: 17%;
+    transform: translateY(-50%);
+}
+
+.opps-text p {
+    color: white;
+    font-size: 15px;
+    margin: 0;
+    overflow: hidden;
+    width: 0;
+    font-family: "Iceberg", sans-serif;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.opps-text p.start-typing {
+    animation: typing 1.4s steps(20) 1s forwards;
+}
+
+
+
+
+.signin-text{
+    position: absolute;
+    top: 10%;
+    align-items: center;
+    transform: translateY(-50%);
+}
+
+
+.signin-text p {
+   color: white;
+    font-size: 15px;
+    margin: 0;
+    overflow: hidden;
+    opacity: 0;
+    border: 2px solid white;
+     padding: 5px 10px;
+      border-radius: 15px;
+    font-family: "Iceberg", sans-serif;
+}
+
+.signin-text p.start-typing {
+    animation: fadein 1s ease-in 2s forwards;
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+.wrapper {
+    width: 80%;
+    max-width: 500px;
+    height: auto;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1;
+}
+
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 0px;
+  color: #fff;
+}
+
+
+.input-field {
+  position: relative;
+  border-bottom: 2px solid #ccc;
+  margin: 15px 0;
+}
+
+.input-field label {
+  position: absolute;
+  top: 70%;
+  left: 0;
+  transform: translateY(-50%);
+  color: #fff;
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.15s ease;
+}
+
+
+.input-field input {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  color: #fff;
+}
+
+.input-field input:focus~label,
+.input-field input:valid~label {
+  font-size: 0.8rem;
+  top: 50px;
+  transform: translateY(-400%);
+}
+
+.forget {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 25px 0 35px 0;
+  color: #fff;
+}
+
+
+#remember {
+  accent-color: #fff;
+}
+
+
+.forget label {
+  display: flex;
+  align-items: center;
+}
+
+
+.forget label p {
+  margin-left: 8px;
+}
+
+button {
+  background: #fff;
+  color: #000;
+  font-weight: 600;
+  border: none;
+  padding: 12px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 16px;
+  border: 2px solid transparent;
+  transition: 0.3s ease;
+}
+
+
+button:hover {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.register {
+  text-align: center;
+  margin-top: -10;
+  color: #fff;
+}
+
+
+@keyframes showLogin {
+    from {
+        opacity: 0;
+    }
+   to {
+         opacity: 1;
+   }
+}
+
+.wrapper.show-login {
+    animation: showLogin 1s ease-in-out forwards 2.5s ;
+} 
+
+
+.forget a,
+.register a {
+    color: white;
+    text-decoration: none;
+}
+
+
+#togglePassword {
+position: absolute;
+right: 5px;
+top: 50%;
+width: 5%;
+cursor: pointer;
+}
+
+#sword {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    transform-origin: top center;
+    transform: translate(-50%, 0%) scale(1) rotate(90deg);
+    z-index: 98;
+    opacity: 0;
+}
+
+
+@keyframes sword-rotate {
+    0%    { opacity: 0; transform: translate(-50%, 0%) scale(0) rotate(90deg); }
+    20%   { opacity: 1; transform: translate(-50%, 0%) scale(1.5) rotate(180deg); }
+    50%   { opacity: 1; transform: translate(-50%, 0%) scale(2) rotate(250deg); }
+    99%  { opacity: 1; transform: translate(-50%, 0%) scale(1.5) rotate(540deg); }
+    100%  { opacity: 0; transform: translate(-50%, 0%) scale(0) rotate(540deg); }
+  }
+
+
+  .spin {
+    animation: sword-rotate 1s linear  forwards;
+}
+
+
+menu {
+  color: white;
+}
+
+
+.footer{
+color: #fff;
+}
+
+
+

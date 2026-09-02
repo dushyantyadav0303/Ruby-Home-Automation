@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+  
+    <div class="video-animation">
+        <video autoplay id="startup-video">
+            <source src="assets/startup.mp4" type="video/mp4" />
+        </video>
+        <img id="Ruby" src="assets/ruby.png" style="display: none;" />
+        <img id="sword" src="assets/sword.png" />
+    </div>
+
+    <div class="opps-text">
+        <p>opps...</p>
+    </div>
+
+    <div class="signin-text">
+        <p>Signin first</p>
+    </div>
+
+
+      <audio id="Typing-sound-effect" src="assets/keyboard-typing-sound-effect.mp3"></audio> 
+
+
+
+
+  <div class="wrapper">
+      <form id="loginForm">
+      <h2>Login</h2>
+        <div class="input-field">
+       <input type="email" id="email" required>
+        <label>Enter your email</label>
+      </div>
+      
+      <div class="input-field">
+        <input type="password" id="password"  required  >
+         <label>Enter your password</label>
+        <img id="togglePassword" src="assets/visible.png" >
+      </div>
+       <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+        <a href="#" id="forgotPassword">Forgot password?</a>
+      </div>
+      <button type="submit">Log In</button>
+      <p id="login-message"></p>
+      <div class="register">
+        <p>Don't have an account?
+           <a href="#" id="goToRegister">Register</a>
+          </p>
+      </div>
+    </form>
+
+
+     <form id="registerForm">
+<h2>Register</h2>
+<div class="input-field">
+       <input type="text" id="name" required placeholder=" ">
+        <label>Name</label>
+      </div>
+
+  <div class="input-field">
+       <input type="email" id="reg-email" required placeholder=" ">
+        <label>Enter your email</label>
+      </div>
+
+      <div class="input-field">
+        <input type="password" id="new-password"  required placeholder=" " >
+         <label> Create your password</label>
+      </div> 
+
+      <div class="input-field">
+        <input type="password" id="check-password"  required  placeholder=" ">
+         <label>Confirm your password</label>
+      </div>
+
+<div>
+    <button type="submit">Sign Up</button>
+    <p id="register-message"></p>
+</div>
+
+<div class="register">
+    <p>Already have an account? 
+      <a href="#" id="backToLogin">Log In</a>
+    </p>
+</div>
+         
+   </form>
+  </div>
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="script.js"></script>
+</body>
+</html>
