@@ -26,7 +26,7 @@ const forgotPasswordLink = document.getElementById("forgotPassword");
 onAuthStateChanged(auth, function(user) {
     if (user && user.emailVerified) {
         console.log("Already logged in as:", user.email);
-        window.location.href = "home.html";
+        window.location.href = "Dashboard.html";
     }
 });
 
@@ -96,7 +96,7 @@ loginForm.addEventListener("submit", function(event) {
     message.style.color = "lime";
 
     setTimeout(function() {
-        window.location.href = "home.html";
+        window.location.href = "Dashboard.html";
     }, 1000);
 })
 
