@@ -183,7 +183,7 @@ animation: movetocentre 1s ease-in-out forwards;
     top: 15%;
     left: 50%;
     transform: translateX(-50%);
-    opacity: 1;
+    opacity: 0;
 }
 
 
