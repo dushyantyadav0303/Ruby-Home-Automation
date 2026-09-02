@@ -1,5 +1,5 @@
 <h1 align="center">
-<br> <img width=20% alt="banner" src="https://github.com/user-attachments/assets/778ec22b-0275-400e-8fe7-37aeb6d882b7" />
+<br> <img width=20% alt="banner" src="Ruby-webapp/assets/ruby.png" />
 </h1>
 <div align="center">   
   
@@ -30,7 +30,9 @@
 
 https://github.com/user-attachments/assets/42d68add-5cff-4576-99cb-57eee04979b4
 
-
+> [!IMPORTANT]
+> Hey! this NOTE for REVIEWER <br/>
+> Please kindly check [Reviewer NOTE](https://github.com/dushyantyadav0303/Ruby-Home-Automation/blob/main/Reviewer_NOTE.md).
 
 ### About the Project
 
@@ -148,7 +150,7 @@ Source: `BOM/BOM.csv`
 
 > [!NOTE]
 > Price As of August 25, 2026v 
-> & It not Include the Shipping fee <br/>v
+> & It not Include the Shipping fee <br/>
 
 ## License
 
