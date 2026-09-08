@@ -34,6 +34,8 @@ https://github.com/user-attachments/assets/42d68add-5cff-4576-99cb-57eee04979b4
 > Hey! this NOTE for REVIEWER <br/>
 > Please kindly check [Reviewer NOTE](https://github.com/dushyantyadav0303/Ruby-Home-Automation/blob/main/Reviewer_NOTE.md).
 
+## Webapp: https://ruby-home-automation.vercel.app
+
 ### About the Project
 
 **Ruby-Home-Automation** It is a aesthetic Home Automation Device With Multi color silkscreen, It connect with home Appliances and Make it control them using your phone From any corner of the world. And Also connect with Home assistant like Alexa & Google Assistant And control them using Voice command.
@@ -58,8 +60,8 @@ https://github.com/user-attachments/assets/42d68add-5cff-4576-99cb-57eee04979b4
 
 ## Schematic
 [![EasyEDA](https://img.shields.io/badge/Designed%20in-EasyEDA-00578F?style=for-the-badge&logo=easyeda&logoColor=white)](https://easyeda.com)
-
 Source : `src/PCB/Sch`
+## [Oshwlab](https://oshwlab.com/dushyant0303/project_avsrxfsp)
 <img width=90% alt="Schematic" src="https://github.com/user-attachments/assets/732854a6-d7e9-48a1-a527-555bbf7143f1" />
 
 ## PCB 
@@ -149,8 +151,8 @@ Source: `BOM/BOM.csv`
 
 
 > [!NOTE]
-> Price As of August 25, 2026v 
-> & It not Include the Shipping fee <br/>
+> Price As of August 25, 2026  <br/>
+> & It not Include the Shipping fee
 
 ## License
 
