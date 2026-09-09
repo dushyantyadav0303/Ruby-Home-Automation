@@ -3,7 +3,7 @@
 </h1>
 <div align="center">   
   
-[![Hack Club macondo](https://img.shields.io/badge/Hack%20Club-🦋Macondo-FFC800?style=for-the-badge&logo=hack-club&logoColor=red.svg)](https://macondo.hackclub.com)
+[![Hack Club Live YSWS](https://img.shields.io/badge/Hack%20Club-Live%20YSWS-FFC800?style=for-the-badge&logo=hack-club&logoColor=red.svg)](https://Live.hackclub.com)
 </div>
 
  <div align="center">   
@@ -30,9 +30,6 @@
 
 https://github.com/user-attachments/assets/42d68add-5cff-4576-99cb-57eee04979b4
 
-> [!IMPORTANT]
-> Hey! this NOTE for REVIEWER <br/>
-> Please kindly check [Reviewer NOTE](https://github.com/dushyantyadav0303/Ruby-Home-Automation/blob/main/Reviewer_NOTE.md).
 
 ## Webapp: https://ruby-home-automation.vercel.app
 
@@ -167,13 +164,13 @@ Contributions, improvements, and remixes are welcome! Please read the [CONTRIBUT
 ## Credits
 <div align="center">
   
-[![Hack Club macondo](https://img.shields.io/badge/Hack%20Club-🦋Macondo-FFC800?style=for-the-badge&logo=hack-club&logoColor=red)](https://macondo.hackclub.com)
+[![Hack Club Live YSWS](https://img.shields.io/badge/Hack%20Club-Live%20YSWS-FFC800?style=for-the-badge&logo=hack-club&logoColor=red)](https://Live.hackclub.com)
 [![EasyEDA](https://img.shields.io/badge/Designed%20in-EasyEDA-00578F?style=for-the-badge&logo=easyeda&logoColor=white)](https://easyeda.com)
 [![Fusion 360](https://img.shields.io/badge/CAD%20in-Fusion%20360-orange?style=for-the-badge&logo=autodesk&logoColor=white)](https://www.autodesk.com/products/fusion-360)
 [![Blender](https://img.shields.io/badge/Rendered%20in-Blender-F5792A?style=for-the-badge&logo=blender&logoColor=white)](https://www.blender.org) 
 </div>
 
-This project was created during a [Hack Club](https://hackclub.com) event [Macondo](https://macondo.hackclub.com).
+This project was created during a [Hack Club](https://hackclub.com) event [Live YSWS](https://Live.hackclub.com).
 - **[EasyEDA](https://easyeda.com)** - PCB design and schematic capture
 - **[Fusion 360](https://www.autodesk.com/products/fusion-360)** - Cad Designing
 - **[Blender](https://www.blender.org)** - Render
