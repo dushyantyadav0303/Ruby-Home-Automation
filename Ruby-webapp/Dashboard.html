@@ -17,37 +17,38 @@
         <div class="device-animation">
          <div class="device-title">
      <h1>My Ruby</h1>
-          <p id="deviceStatus" class="status online">
+          <p id="deviceStatus" class="status offline">
              <span class="status-dot"></span>
-                Online
+                offline
             </p>
         </div>
-        <video autoplay muted id="device-video">
+        <video muted id="device-video">
             <source src="assets/device-video.mp4" type="video/mp4" />
         </video>
     </div>
 
        <div class="wifi-indicator">
         <img src="assets/wifi.png" alt="Wifi">
-        <span>-53 dBm</span>
+        <span>-- dBm</span>
     </div>
 
 
  <div class="quick-stats">
         <div class="stat">
-        <span class="stat-value">24°C</span>
+        <span class="stat-value" id="temp">--°C</span>
         <span class="stat-label">Temperature</span>
     </div>
 
+        <div class="stat">
+        <span class="stat-value" id="humidity">--%</span>
+        <span class="stat-label">Humidity</span>
+    </div>
+
 <div class="stat">
-        <span class="stat-value">128 days</span>
+        <span class="stat-value" id="uptime">--</span>
         <span class="stat-label">Uptime</span>
  </div>
   
-        <div class="stat">
-        <span class="stat-value">4.2 kWh</span>
-        <span class="stat-label">Power Consuption</span>
-    </div>
 </div>
 
     
