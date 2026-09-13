@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="Dashboard.js" type="module" defer></script>
+</head>
+
+<body>
+
+<section id="home" class="page">
+<h1> SOon! </h1>
+</section>
+
+
+<section id="devices" class="page">
+        <div class="device-animation">
+         <div class="device-title">
+     <h1>My Ruby</h1>
+          <p id="deviceStatus" class="status offline">
+             <span class="status-dot"></span>
+                offline
+            </p>
+        </div>
+        <video muted id="device-video">
+            <source src="assets/device-video.mp4" type="video/mp4" />
+        </video>
+    </div>
+
+       <div class="wifi-indicator">
+        <img src="assets/wifi.png" alt="Wifi">
+        <span>-- dBm</span>
+    </div>
+
+
+ <div class="quick-stats">
+        <div class="stat">
+        <span class="stat-value" id="temp">--°C</span>
+        <span class="stat-label">Temperature</span>
+    </div>
+
+        <div class="stat">
+        <span class="stat-value" id="humidity">--%</span>
+        <span class="stat-label">Humidity</span>
+    </div>
+
+<div class="stat">
+        <span class="stat-value" id="uptime">--</span>
+        <span class="stat-label">Uptime</span>
+ </div>
+  
+</div>
+
+    
+
+    </section>
+
+    <section id="profile" class="page">
+      <h1>SOon!</h1>
+    </section>
+
+<nav class="bottom-nav">
+        <a href="#home" class="menu">
+            <img src="assets/home-icon.png" alt="">
+        </a>
+
+        <div class="bottom-nav-d">
+            <a href="#devices" class="menu-d">
+                <img src="assets/Ruby.png" alt="">
+            </a>
+        </div>
+
+        <a href="#profile" class="menu">
+            <img src="assets/Profile.png" alt="">
+        </a>
+    </nav>
+
+</body>
+</html>
