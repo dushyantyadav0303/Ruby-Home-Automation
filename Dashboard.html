@@ -29,7 +29,7 @@
 
        <div class="wifi-indicator">
         <img src="assets/wifi.png" alt="Wifi">
-        <span>-- dBm</span>
+        <span id="wifiRssi">-- dBm</span>
     </div>
 
 
@@ -48,16 +48,52 @@
         <span class="stat-value" id="uptime">--</span>
         <span class="stat-label">Uptime</span>
  </div>
-  
 </div>
+    </section>
+    
+    
+    
+    <section id="profile" class="page">
 
+    <div class="profile-wrap" id="profile-wrap">
+
+
+<button type="button" id="edit-btn" class="edit-btn">
+    <img src="assets/edit.png" >
+</button>  
+
+         <div class="pfp-container">
+               <label for="pfp-input" class="pfp-lable" >
+    <img src="assets/photo.png" id="pfp-int">
+            <img id="pfp-img" style="display: none;" />
+        <div class="pfp-overlay">
+    <span>Change</span>
+</div>
+     </label>
+     <input type="file" id="pfp-input" accept="image/*" />
+     </div>
+     
+    <div class="profile-field">
+        <label>Your Name</label>
+        <div class="editable-row">
+          <input type="text" id="name-input" disabled/>
+        </div>
+      </div>
+
+   <div class="profile-field">
+        <label>Email</label>
+        <p id="email-display">user@example.com</p>
+      </div>
+
+       <button type="button" id="logout-btn" class="logout-btn">Logout</button>
     
 
-    </section>
+   </div>
+</section>
 
-    <section id="profile" class="page">
-      <h1>SOon!</h1>
-    </section>
+
+
+
 
 <nav class="bottom-nav">
         <a href="#home" class="menu">
@@ -66,7 +102,7 @@
 
         <div class="bottom-nav-d">
             <a href="#devices" class="menu-d">
-                <img src="assets/Ruby.png" alt="">
+                <img src="assets/ruby.png" alt="">
             </a>
         </div>
 

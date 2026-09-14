@@ -1,6 +1,6 @@
 import { auth, db, rtdb } from "./firebase-config.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
-import { doc, getDoc } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+import { doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
 
 onAuthStateChanged(auth, function(user) {
@@ -12,8 +12,10 @@ onAuthStateChanged(auth, function(user) {
     document.body.style.visibility = "visible";
     loadProfileData(user);
     showPageFromHash();
-    device_data();
 });
+
+device_data();
+
 
 function showPageFromHash() {
     const video = document.getElementById("device-video");
@@ -51,39 +53,34 @@ function showPageFromHash() {
 window.addEventListener("hashchange", showPageFromHash);
 
 function loadProfileData(user) {
-    const profileNameEl = document.getElementById("profileName");
-    const profileEmailEl = document.getElementById("profileEmail");
-    const avatarInitialEl = document.getElementById("avatarInitial");
-    const rowName = document.getElementById("rowName");
-    const rowEmail = document.getElementById("rowEmail");
-    const rowJoined = document.getElementById("rowJoined");
+    const nameInput = document.getElementById("name-input");
+    const emailDisplay = document.getElementById("email-display");
+    const pfpImg = document.getElementById("pfp-img");
+    const pfpInt = document.getElementById("pfp-int");
 
-    if (profileEmailEl) profileEmailEl.textContent = user.email;
-    if (rowEmail) rowEmail.textContent = user.email;
+    if (emailDisplay) emailDisplay.textContent = user.email;
 
     getDoc(doc(db, "users", user.uid)).then(function(docSnap) {
         if (docSnap.exists()) {
             const data = docSnap.data();
+            if (nameInput && data.name) nameInput.value = data.name;
 
-            if (profileNameEl) profileNameEl.textContent = data.name;
-            if (rowName) rowName.textContent = data.name;
-            if (avatarInitialEl) avatarInitialEl.textContent = data.name.charAt(0).toUpperCase();
 
-            if (data.createdAt && rowJoined) {
-                const date = data.createdAt.toDate();
-                rowJoined.textContent = date.toLocaleDateString();
+            if (data.photoURL) {
+                if (pfpImg) {
+                    pfpImg.src = data.photoURL;
+                    pfpImg.style.display = "block";
+                }
+                if (pfpInt) pfpInt.style.display = "none";
             }
         } else {
-
-            if (profileNameEl) profileNameEl.textContent = user.email;
-            if (avatarInitialEl) avatarInitialEl.textContent = user.email.charAt(0).toUpperCase();
+            if (nameInput) nameInput.value = user.email.split("@")[0];
         }
     });
 }
 
 function device_data() {
     device_lost();
-
     const deviceRef = ref(rtdb, "device_data");
 
 
@@ -111,6 +108,7 @@ function device_data() {
 
 function device_lost() {
       const statusEl = document.getElementById("deviceStatus");
+     const rssiEl = document.getElementById("wifiRssi"); 
       if (statusEl) {
             statusEl.className = "status offline";
         statusEl.innerHTML = '<span class="status-dot"></span> Offline';
@@ -136,15 +134,85 @@ function resetWatchdog() {
     }
     watchdogTimer = setTimeout(() => {
         device_lost();
-    }, 10000); 
+    }, 1500); 
 }
 
 
-const logoutBtn = document.getElementById("logoutBtn");
+const logoutBtn = document.getElementById("logout-btn");
 if (logoutBtn) {
     logoutBtn.addEventListener("click", function() {
         signOut(auth).then(function() {
             window.location.href = "index.html";
         });
+    });
+}
+
+
+
+
+const pfpInput = document.getElementById("pfp-input");
+const pfpImg = document.getElementById("pfp-img");
+const pfpInt = document.getElementById("pfp-int");
+
+if (pfpInput) {
+    pfpInput.addEventListener("change", function(e) {
+        const file = e.target.files[0];
+        if (!file) return;
+
+        const reader = new FileReader();
+        reader.onload = function(event) {
+            const img = new Image();
+            img.onload = function() {
+                const canvas = document.createElement("canvas");
+                canvas.width = 120;
+                canvas.height = 120;
+                const ctx = canvas.getContext("2d");
+                ctx.drawImage(img, 0, 0, 120, 120);
+
+                const optimizedImage = canvas.toDataURL("image/jpeg", 0.8);
+
+                if (pfpImg) {
+                    pfpImg.src = optimizedImage;
+                    pfpImg.style.display = "block";
+                }
+                if (pfpInt) pfpInt.style.display = "none";
+
+                if (auth.currentUser) {
+                    updateDoc(doc(db, "users", auth.currentUser.uid), {
+                        photoURL: optimizedImage
+                    });
+                }
+            };
+            img.src = event.target.result;
+        };
+        reader.readAsDataURL(file);
+    });
+}
+
+
+
+const editBtn = document.getElementById("edit-btn");
+const profileWrap = document.getElementById("profile-wrap");
+const nameInput = document.getElementById("name-input");
+
+let isEditing = false;
+
+if (editBtn) {
+    editBtn.addEventListener("click", () => {
+        isEditing = !isEditing;
+
+        nameInput.disabled = !isEditing;
+        if (profileWrap) profileWrap.classList.toggle("editing", isEditing);
+        editBtn.classList.toggle("active", isEditing);
+
+        if (isEditing) {
+            nameInput.focus();
+        } else {
+            if (auth.currentUser && nameInput.value.trim() !== "") {
+                updateDoc(doc(db, "users", auth.currentUser.uid), {
+                    name: nameInput.value.trim()
+                });
+            }
+        }
     });
 }
