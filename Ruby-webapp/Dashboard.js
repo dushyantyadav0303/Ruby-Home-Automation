@@ -1,7 +1,13 @@
+//  Really thanks to https://firebase.google.com/docs
+// Firebase well Define docs make my works easy fr
+
+
+
 import { auth, db, rtdb } from "./firebase-config.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
 import { doc, getDoc, updateDoc, collection } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
+import { set } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
 
 onAuthStateChanged(auth, function(user) {
     if (!user || !user.emailVerified) {
@@ -244,6 +250,9 @@ if (editBtn) {
 }
 
 
+
+
+const genKeyBtn = document.getElementById("gen-key-btn");
 genKeyBtn.addEventListener("click", function() {
         const newKey = doc(collection(db, "devices")).id; 
 
@@ -264,3 +273,89 @@ genKeyBtn.addEventListener("click", function() {
             });
         }
     });
+    
+
+
+
+
+function updateLightIcon(index, isOn) {
+    const icon = document.getElementById(`light${index}-icon`);
+    if (icon) {
+        icon.src = isOn ? "assets/bulb-on.png" : "assets/bulb-off.png";
+    }
+}
+
+for (let i = 1; i <= 4; i++) {
+    const lightToggle = document.getElementById(`light${i}-toggle`);
+    if (lightToggle) {
+        lightToggle.addEventListener("change", function(e) {
+            const state = e.target.checked;
+            
+            updateLightIcon(i, state); 
+            set(ref(rtdb, `device_data/controls/light${i}`), state);
+        });
+    }
+}
+
+
+
+
+
+const controlsRef = ref(rtdb, "device_data/controls");
+onValue(controlsRef, (snapshot) => {
+    const controls = snapshot.val();
+    
+    if (controls) {
+       
+        for (let i = 1; i <= 4; i++) {
+            if (controls[`light${i}`] !== undefined) {
+                const isLightOn = controls[`light${i}`];
+                const toggle = document.getElementById(`light${i}-toggle`);
+                
+                if (toggle) toggle.checked = isLightOn;
+                updateLightIcon(i, isLightOn); 
+            }
+        }
+    }
+});
+
+
+
+
+
+function updateFanAnimation(speed) {
+    const fanIcon = document.getElementById("fan-icon");
+    if (!fanIcon) return;
+    
+    if (speed == 0) {
+        fanIcon.style.animationPlayState = "paused";
+    } else {
+        fanIcon.style.animationPlayState = "running";
+        
+      
+        if (speed == 25) fanIcon.style.animationDuration = "1.5s";
+        if (speed == 50) fanIcon.style.animationDuration = "1.0s";
+        if (speed == 75) fanIcon.style.animationDuration = "0.5s";
+        if (speed == 100) fanIcon.style.animationDuration = "0.25s"; 
+    }
+}
+
+
+
+
+
+const fanSlider = document.getElementById("fan-slider");
+const fanSpeedDisplay = document.getElementById("fan-speed-display");
+
+if (fanSlider) {
+    fanSlider.addEventListener("input", function(e) {
+        const speed = e.target.value;
+        if (fanSpeedDisplay) fanSpeedDisplay.textContent = speed + "%";
+        updateFanAnimation(speed); 
+    });
+
+    fanSlider.addEventListener("change", function(e) {
+        const speed = Number(e.target.value);
+        set(ref(rtdb, 'device_data/controls/fan_speed'), speed);
+    });
+}

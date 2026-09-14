@@ -9,7 +9,107 @@
 <body>
 
 <section id="home" class="page">
-<h1> SOon! </h1>
+    <div class="home-wrap">
+   
+        <div class="home-sensors">
+            <div class="home-stat">
+                <span id="home-temp">--°C</span>
+                <label>Temp</label>
+            </div>
+
+
+            <div class="home-stat">
+                <span id="home-humidity">--%</span>
+                <label>Humidity</label>
+            </div>
+        </div>
+
+        <h2 class="section-title">Room Controls</h2>
+        <div class="controls-grid">        
+            
+
+            <div class="controls-grid">
+    <div class="control-card">
+        <div class="control-title">
+            <img id="light1-icon" src="assets/bulb-off.png" class="light-icon">
+            <span>Light 1</span>
+        </div>
+        <label class="switch">
+            <input type="checkbox" id="light1-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+
+
+
+
+
+    <div class="control-card">
+        <div class="control-title">
+            <img id="light2-icon" src="assets/bulb-off.png" class="light-icon">
+            <span>Light 2</span>
+        </div>
+        <label class="switch">
+            <input type="checkbox" id="light2-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+
+
+
+
+    <div class="control-card">
+        <div class="control-title">
+            <img id="light3-icon" src="assets/bulb-off.png" class="light-icon">
+            <span>Light 3</span>
+        </div>
+        <label class="switch">
+            <input type="checkbox" id="light3-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+
+
+
+
+
+    <div class="control-card">
+        <div class="control-title">
+            <img id="light4-icon" src="assets/bulb-off.png" class="light-icon">
+            <span>Light 4</span>
+        </div>
+        <label class="switch">
+            <input type="checkbox" id="light4-toggle">
+            <span class="slider round"></span>
+        </label>
+    </div>
+</div>
+
+            
+
+<div class="control-card fan-card">
+            <div class="fan-header">
+                <div class="control-title">
+                    <img id="fan-icon" src="assets/fan.png" class="fan-icon">
+                    <span>Ceiling Fan</span>
+                </div>
+                <span id="fan-speed-display" class="fan-speed">0%</span>
+            </div>
+            <input type="range" id="fan-slider" min="0" max="100" step="25" value="0" class="range-slider">
+            <div class="slider-labels">
+                <span>Off</span>
+                <span>Max</span>
+            </div>
+        </div>
+
+            
+
+
+        </div>
+
+    </div>
 </section>
 
 
@@ -73,12 +173,16 @@
      <input type="file" id="pfp-input" accept="image/*" />
      </div>
      
+
+     
     <div class="profile-field">
         <label>Your Name</label>
         <div class="editable-row">
           <input type="text" id="name-input" disabled/>
         </div>
       </div>
+
+
 
    <div class="profile-field">
         <label>Email</label>

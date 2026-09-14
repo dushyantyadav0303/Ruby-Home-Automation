@@ -1,3 +1,11 @@
+
+/* I really want to thank. https://www.w3schools.com/css/ for Such a Docs That help me a lot in this project 
+*/
+
+
+
+
+
 @import url('https://fonts.googleapis.com/css2?family=Iceberg&display=swap');
 
 body{
@@ -503,6 +511,7 @@ body{
     -webkit-backdrop-filter: blur(12px);
     border-radius: 8px;
     padding: 12px 16px;
+
     display: flex; 
     align-items: center; 
     gap: 12px; 
@@ -521,4 +530,160 @@ body{
     font-size: 13px;
     font-family: "Iceberg", sans-serif;
     line-height: 1.4;
+}
+
+
+.home-wrap {
+ width: 80%;
+    max-width: 500px;
+    height: auto;
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 24px 20px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.854);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    position: absolute;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    max-height: 600px;
+}
+
+
+.home-sensors {
+    display: flex;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, 0.35);
+    border: 1px dashed rgba(255, 255, 255, 0.601);
+    border-radius: 8px;
+    padding: 12px;
+}
+
+.home-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    font-family: "Iceberg", sans-serif;
+}
+
+.home-stat span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #4CD964;
+}
+
+.home-stat label {
+    font-size: 10px;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+}
+
+.section-title {
+    color: azure;
+    font-size: 1.2rem;
+    margin: 0;
+    font-family: "Iceberg", sans-serif;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.476);
+    padding-bottom: 8px;
+}
+
+.controls-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.control-card {
+    background: rgba(34, 34, 33, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.602);
+    border-radius: 12px;
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.control-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: azure;
+    font-size: 14px;
+}
+
+.light-icon {
+    width: 25px;
+    height: 25px;
+    transition: opacity 0.2s ease;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 44px;
+    height: 24px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: .3s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 18px;
+    width: 18px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: .3s;
+}
+
+input:checked + .slider {
+    background-color: #4CD964;
+}
+
+input:checked + .slider:before {
+    transform: translateX(20px);
+}
+
+.slider.round {
+    border-radius: 24px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+
+.fan-icon {
+    width: 50px;
+    height: 50px;
+    animation: spin 1s infinite linear;
+    animation-play-state: paused; 
+}
+
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
