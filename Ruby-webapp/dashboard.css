@@ -447,3 +447,78 @@ body{
 .logout-btn:hover {
     background: rgba(255, 255, 255, 0.11);
 }
+
+
+
+.key-display {
+    color: #f62e2e;
+    letter-spacing: 1px;
+    font-size: 15px;
+}
+
+
+.gen-key-btn {
+    background: transparent;
+    border: 1px solid rgba(217, 81, 76, 0.5);
+    color: #e54545;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 11px;
+    font-family: "Iceberg", sans-serif;
+    cursor: pointer;
+    margin-left: auto;
+    transition: all 0.2s ease;
+}
+
+
+.gen-key-btn:hover {
+    background: rgba(252, 166, 165, 0.15);
+}
+
+.key-display.generated {
+    color: #4cd964;
+}
+
+.gen-key-btn.generated {
+    border: 1px solid rgba(76, 217, 100, 0.5);
+    color: #4cd964;
+}
+
+.gen-key-btn.generated:hover {
+    background: rgba(76, 217, 100, 0.15);
+}
+
+
+
+.key-banner {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    max-width: 460px;
+    background: rgba(255, 179, 0, 0.15);
+    border: 1px solid rgba(255, 179, 0, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 8px;
+    padding: 12px 16px;
+    display: flex; 
+    align-items: center; 
+    gap: 12px; 
+    z-index: 1000;
+}
+
+.warning-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0; 
+}
+
+.key-banner p {
+    margin: 0;
+    color: #ffca28;
+    font-size: 13px;
+    font-family: "Iceberg", sans-serif;
+    line-height: 1.4;
+}

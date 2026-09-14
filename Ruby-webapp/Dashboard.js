@@ -1,6 +1,6 @@
 import { auth, db, rtdb } from "./firebase-config.js";
 import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js";
-import { doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
+import { doc, getDoc, updateDoc, collection } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-firestore.js";
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js";
 
 onAuthStateChanged(auth, function(user) {
@@ -66,14 +66,40 @@ function loadProfileData(user) {
             if (nameInput && data.name) nameInput.value = data.name;
 
 
-            if (data.photoURL) {
+if (data.photoURL) {
                 if (pfpImg) {
                     pfpImg.src = data.photoURL;
                     pfpImg.style.display = "block";
                 }
                 if (pfpInt) pfpInt.style.display = "none";
             }
-        } else {
+            const deviceKeyDisplay = document.getElementById("device-key-display");
+            const deviceKeyAlert = document.getElementById("deviceKeyAlert");
+            const genKeyBtn = document.getElementById("gen-key-btn");
+
+            if (data.deviceKey) {
+                if (deviceKeyDisplay) {
+                    deviceKeyDisplay.textContent = data.deviceKey;
+                    deviceKeyDisplay.classList.add("generated");
+                }
+
+
+                if (genKeyBtn) genKeyBtn.classList.add("generated"); 
+                                if (deviceKeyAlert) deviceKeyAlert.style.display = "none";
+            } else {
+                if (deviceKeyDisplay) {
+                    deviceKeyDisplay.textContent = "Not Generated";
+                    deviceKeyDisplay.classList.remove("generated");
+                }
+
+                
+                if (genKeyBtn) genKeyBtn.classList.remove("generated");
+                if (deviceKeyAlert) deviceKeyAlert.style.display = "flex";
+            }
+        } 
+        
+        
+        else {
             if (nameInput) nameInput.value = user.email.split("@")[0];
         }
     });
@@ -216,3 +242,25 @@ if (editBtn) {
         }
     });
 }
+
+
+genKeyBtn.addEventListener("click", function() {
+        const newKey = doc(collection(db, "devices")).id; 
+
+        if (auth.currentUser) {
+            updateDoc(doc(db, "users", auth.currentUser.uid), {
+                deviceKey: newKey
+            }).then(() => {
+                const deviceKeyDisplay = document.getElementById("device-key-display");
+                const alertBanner = document.getElementById("deviceKeyAlert");
+                
+                if (deviceKeyDisplay) {
+                    deviceKeyDisplay.textContent = newKey;
+                    deviceKeyDisplay.classList.add("generated"); 
+                }
+                genKeyBtn.classList.add("generated");
+                
+                if (alertBanner) alertBanner.style.display = "none"; 
+            });
+        }
+    });
