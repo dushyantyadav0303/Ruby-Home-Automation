@@ -34,7 +34,9 @@
 # September 14th:  completed the [webapp](https://ruby-home-automation.vercel.app)
 ## yoo gng,
 ### I finally completed the Web here you see the demo 
+https://github.com/user-attachments/assets/afb32e5a-3740-4272-8d85-8ec8a7474dab
 
+---
 
 
 # August 31st: working on data base
@@ -43,7 +45,7 @@ ahhhh today i am Working on data base and hackatim eis going on ![image](https:/
 so there is 2 database: for device Data and Authorization <br/>
 And I really want to thank Firebase Guide it's very helpful. vvv
 
-https://github.com/user-attachments/assets/afb32e5a-3740-4272-8d85-8ec8a7474dab
+
 
 
 
