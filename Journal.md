@@ -1,14 +1,17 @@
 >  [!NOTE]
->  Time logged: 30hr Journal + 50.4hr Lapse
+>  Time logged: 30hr Journal +  59.2Lapse/hackatime  = 89.2hr <br/>
+> Please don't do deflation Most of the thing are lapses and 0% AI code and Really awesome project
 
 
 <table>
   <tr>
-    <td><img src="https://github.com/user-attachments/assets/13c46d44-d8a7-4393-bae2-0c95c394a31b" width="500" alt="image 1"></td>
-    <td><img src="https://github.com/user-attachments/assets/e8a53596-5aad-41ee-a315-506c2803f13b" width="500" alt="image 2"></td>
+    <td><img src="https://github.com/user-attachments/assets/8c930cc5-55f8-4b21-8e8a-fa4bde39b47b" width="500" alt="image 1"></td>
+    <td><img src="https://github.com/user-attachments/assets/774703d4-9d18-45a3-b435-e1cfc2370924"  width="500" alt="image 2"></td>
   </tr>
 </table>
 
+## https://hackatime.hackclub.com/@dushyantYadav0303/project/Ruby-webapp
+## https://hackatime.hackclub.com/@dushyantYadav0303/project/ruby 
 
 
 ## title: "Ruby Home Automation"
@@ -25,13 +28,23 @@
 ---
 
 
+---
+---
+
+# September 14th:  completed the [webapp](https://ruby-home-automation.vercel.app)
+## yoo gng,
+### I finally completed the Web here you see the demo 
+
 
 
 # August 31st: working on data base
 ahhhh today i am Working on data base and hackatim eis going on ![image](https://cdn.hackclub.com/01a0567a-cded-7e65-9e15-8d102453cb82/image.png)<br/>here you see the plan
 <br/> 
 so there is 2 database: for device Data and Authorization <br/>
-And I really want to thank Firebase Guide it's very helpful.
+And I really want to thank Firebase Guide it's very helpful. vvv
+
+https://github.com/user-attachments/assets/afb32e5a-3740-4272-8d85-8ec8a7474dab
+
 
 
 ---
